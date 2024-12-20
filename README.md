@@ -9,4 +9,4 @@ A small mod that increases craft skill based on skill level
 - Install BepinEx 5
 - Configure Doorstop with unstripped assemblies (Unity v2019.4.40 version)
   - [Click Here](https://obenseuermodding.github.io/Information/www/Guides/Configuring-Doorstop.html) For a Guide
-- Drag and drop the SkillSpeedCraft DLL from the Releases to your BepinEx plugins folder
+- Drag and drop the SkillSpeedCraft DLL from the [Releases](https://github.com/hiemas-lerastad/OS-SkillCraftSpeed/releases/tag/main) to your BepinEx plugins folder
