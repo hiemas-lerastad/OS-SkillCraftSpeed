@@ -1,7 +1,9 @@
 # Skill Speed Craft
 
 A small mod that increases craft speed based on skill level
+
 100% craft duration at level 1
+
 25% craft duration at level 10
 
 ## Installing
