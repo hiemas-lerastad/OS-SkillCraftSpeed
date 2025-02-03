@@ -30,7 +30,6 @@ public class SkillCraftSpeedPatches
             {
                 ManufacturingPanel.instance.manufacturingPanelUI.manufacturingPower.FlashPowerIcon();
             }
-            return false;
         }
         if (__instance.CraftingInProgress < __instance.AllowSimultaneous)
         {
@@ -45,7 +44,8 @@ public class SkillCraftSpeedPatches
             }
             List<KeyValuePair<ItemStack, int>> usedItemReferences;
             CraftingBase.CraftingInputData inputData;
-            __instance.RemoveItems(__instance.selectedRecipe, out usedItemReferences, out inputData, 1);
+            __instance.RemoveItems(__instance.selectedRecipe, out usedItemReferences, out inputData, 1, false);
+
             int skill = PlayerStats.instance.GetSkill(__instance.selectedRecipe.RelevantSkill);
             float multiplier = (float)(-0.075 * skill + 1);
             int processTime = (int)(__instance.selectedRecipe.ProcessTime * multiplier);
@@ -59,7 +59,7 @@ public class SkillCraftSpeedPatches
                 {
                     onStartCreating.triggerOutputs();
                 }
-                CraftInProgress item = new CraftInProgress(new TimeOfDayAzure.Timer(new Action<TimeOfDayAzure.Timer>(__instance.CraftDelayed), (int)(float)(processTime * num / __instance.EquipmentQuality)), __instance.selectedRecipe, usedItemReferences, inputData);
+                CraftInProgress item = new CraftInProgress(new TimeOfDayAzure.Timer(new Action<TimeOfDayAzure.Timer>(__instance.CraftDelayed), (int)((float)processTime * num / __instance.EquipmentQualityWithUpgrades)), __instance.selectedRecipe, usedItemReferences, inputData);
                 __instance.craftsInProgresses.Add(item);
                 if (__instance.manuActive)
                 {
@@ -75,14 +75,13 @@ public class SkillCraftSpeedPatches
                 InventoryNavigationHandler.Instance.ExitRecipeOpenedPanel();
                 InventoryNavigationHandler.Instance.InitializeManufacturingPanelProgressSlots(false);
             }
-            RecipeController.instance.AddRecipe(__instance.selectedRecipe, true);
+            RecipeController.instance.AddRecipe(__instance.selectedRecipe, true, false);
             if (CraftingBase.currentCraftingBase == __instance)
             {
                 __instance.CheckItems(false);
             }
         }
         __instance.UpdateVisibleItems();
-
         return false;
     }
 }
