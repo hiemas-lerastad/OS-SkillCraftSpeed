@@ -1,7 +1,9 @@
 # Skill Speed Craft
 
-A small mod that increases craft skill based on skill level
+A small mod that increases craft speed based on skill level
+
 100% craft duration at level 1
+
 25% craft duration at level 10
 
 ## Installing
@@ -9,4 +11,4 @@ A small mod that increases craft skill based on skill level
 - Install BepinEx 5
 - Configure Doorstop with unstripped assemblies (Unity v2019.4.40 version)
   - [Click Here](https://obenseuermodding.github.io/Information/www/Guides/Configuring-Doorstop.html) For a Guide
-- Drag and drop the SkillSpeedCraft DLL from the Releases to your BepinEx plugins folder
+- Drag and drop the SkillSpeedCraft DLL from the [Releases](https://github.com/hiemas-lerastad/OS-SkillCraftSpeed/releases/tag/main) to your BepinEx plugins folder
